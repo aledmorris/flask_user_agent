@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+<div class="container-md">
+    Use the form below to interpret your user agent string.<br>
+    <form action="/" method="POST">
+        <div class="form-group">
+            <label for="comment"><br>User Agent:</label>
+            <textarea class="form-control" rows="4" id="user_agent" name="user_agent" placeholder="Paste your user agent string here..."></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br>
+        <div class="container-md">
+            {% if message %}
+                {{ message }}
+            {% endif %}
+            {% if browser %}
+                Web Browser: {{ browser }}<br>
+                Operating System: {{ os }}<br>
+                Device Type: {{ device }}<br>
+            {% endif %}
+        </div>
+    <br>
+    
+</div>
+{% endblock %}
