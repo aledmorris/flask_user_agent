@@ -25,6 +25,11 @@ def index():
             os_data = str(ua_string.os.family) + " " + str(ua_string.os.version_string)
             device_data = str(ua_string.device.brand) + " " + str(ua_string.device.family) + " (" + str(ua_string.device.model) + ")"
 
-    return render_template("index.html", message=error, browser = browser_data, os = os_data, device = device_data)
+            if "IE" in str(ua_string.browser.family):
+                extra_data = "Internet Explorer is not supported, please use a modern browser."
+            elif "Safari" not in str(ua_string.browser.family) and "ios" in str(ua_string.os.family.lower()):
+                extra_data = "Only Safari browser is supported on iOS, other browsers do not have WebRTC capability."
+
+    return render_template("index.html", message=error, browser = browser_data, os = os_data, device = device_data, extra = extra_data)
 
 

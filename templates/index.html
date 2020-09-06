@@ -4,11 +4,14 @@ Home
 {% endblock %}
 {% block content %}
 <div class="container-md">
-    Use the form below to interpret your user agent string.<br>
+    <h3>
+        User Agent Parse
+        <small class="text-muted">Use the form below to interpret your http user agent string.</small>
+    </h3>
     <form action="/" method="POST">
         <div class="form-group">
             <label for="comment"><br>User Agent:</label>
-            <textarea class="form-control" rows="4" id="user_agent" name="user_agent" placeholder="Paste your user agent string here..."></textarea>
+            <textarea class="form-control" rows="3" id="user_agent" name="user_agent" placeholder="Paste your user agent string here..."></textarea>
         </div>
         
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -16,12 +19,29 @@ Home
     <br>
         <div class="container-md">
             {% if message %}
-                {{ message }}
+                <div class="row">
+                    <div class="col-md-6"><p class="text-danger">{{ message }}</p></div>
+                </div>
             {% endif %}
             {% if browser %}
-                Web Browser: {{ browser }}<br>
-                Operating System: {{ os }}<br>
-                Device Type: {{ device }}<br>
+                <div class="row">
+                    <div class="col-md-3"><b>Web Browser</b></div>
+                    <div class="col-md-4">{{ browser }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3"><b>Operating System</b></div>
+                    <div class="col-md-4">{{ os }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3"><b>Device Type</b></div> 
+                    <div class="col-md-4">{{ device }}</div>
+                </div>
+                {% if extra %}
+                    <div class="row">
+                        <div class="col-md-3"><b>Additional</b></div> 
+                        <div class="col-md-4">{{ extra }}</div>
+                    </div>
+                {% endif %}
             {% endif %}
         </div>
     <br>
