@@ -56,6 +56,6 @@ def index():
                 browser_advice = "Internet Explorer is not supported, please use a modern browser."
             
             
-    return render_template("index.html", message=error, browser = browser_data, os = os_data, device = device_data, extra = extra_data, browser_info = browser_advice, pex_url = pexip_interop_url)
+    return render_template("index.html", message=error, ua_string = user_agent_string, browser = browser_data, os = os_data, device = device_data, extra = extra_data, browser_info = browser_advice, pex_url = pexip_interop_url)
 
 

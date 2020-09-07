@@ -11,7 +11,11 @@ Home
     <form action="/" method="POST">
         <div class="form-group">
             <label for="comment"><br>User Agent:</label>
-            <textarea class="form-control" rows="3" id="user_agent" name="user_agent" placeholder="Paste your user agent string here..."></textarea>
+            {% if ua_string %}
+                <textarea class="form-control" rows="3" id="user_agent" name="user_agent" placeholder="{{ ua_string }}"></textarea>
+            {% else %}
+                <textarea class="form-control" rows="3" id="user_agent" name="user_agent" placeholder="Paste your user agent string here..."></textarea>
+            {% endif %}
         </div>
         
         <button type="submit" class="btn btn-primary">Submit</button>
