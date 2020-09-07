@@ -5,8 +5,8 @@ Home
 {% block content %}
 <div class="container-md">
     <h3>
-        User Agent Parse
-        <small class="text-muted">Use the form below to interpret your http user agent string.</small>
+        User Agent Parser
+        <small class="text-muted">Use the form below to interpret your HTTP user agent string.</small>
     </h3>
     <form action="/" method="POST">
         <div class="form-group">
@@ -39,7 +39,13 @@ Home
                 {% if extra %}
                     <div class="row">
                         <div class="col-md-3"><b>Additional</b></div> 
-                        <div class="col-md-4">{{ extra }}</div>
+                        <div class="col-md-4"><span class="badge badge-danger">Important!</span> <p class="text-danger">{{ extra }}</p></div>
+                    </div>
+                {% endif %}
+                {% if browser_info %}
+                    <div class="row">
+                        <div class="col-md-3"><b>Browser Info</b></div> 
+                        <div class="col-md-4"><span class="badge badge-warning">Warning</span> <p>{{ browser_info }}</p></div>
                     </div>
                 {% endif %}
             {% endif %}
