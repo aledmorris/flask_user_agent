@@ -39,7 +39,7 @@ Home
                 {% if extra %}
                     <div class="row">
                         <div class="col-md-3"><b>Additional</b></div> 
-                        <div class="col-md-4"><span class="badge badge-danger">Important!</span> <p class="text-danger">{{ extra }}</p></div>
+                        <div class="col-md-4"><span class="badge badge-danger">Important!</span> <p class="text-danger">{{ extra }}</p></div><br>                        
                     </div>
                 {% endif %}
                 {% if browser_info %}
@@ -48,6 +48,7 @@ Home
                         <div class="col-md-4"><span class="badge badge-warning">Warning</span> <p>{{ browser_info }}</p></div>
                     </div>
                 {% endif %}
+                <br><a href={{ pex_url }} target="_blank">Please click here for the list of supported browsers</a>
             {% endif %}
         </div>
     <br>
