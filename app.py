@@ -27,7 +27,7 @@ def index():
             #ua_short = str(ua_string)
             browser_data = str(ua_string.browser.family) + " " + str(ua_string.browser.version_string)
             os_data = str(ua_string.os.family) + " " + str(ua_string.os.version_string)
-            device_data = str(ua_string.device.brand) + " " + str(ua_string.device.family) + " (" + str(ua_string.device.model) + ")"
+            device_data = str(ua_string.device.brand) + " " + str(ua_string.device.family)
             
             #check specific scenarios
             if "Safari" not in str(ua_string.browser.family) and "ios" in str(ua_string.os.family.lower()):
